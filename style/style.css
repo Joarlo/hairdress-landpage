@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    font-family: 'Poppins';
+    text-decoration: none;
+}
+
+.menu{
+    background-color: rgb(34, 34, 34);
+    padding-inline: 16px;
+}
+
+.nav{
+    max-width: 1280px;
+    height: 70px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img{
+    width: 70px;
+}
+
+.nav-item{
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-item a{
+    font-size: 28px;
+    color: #fff;
+    padding-block: 16px;
+}
+.nav-item :hover{
+    text-decoration: underline;
+    color: rgb(89, 156, 218); 
+}
+.hamburguer{
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+}
+
+.hamburguer::before, .hamburguer::after{
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+@media (max-width: 720px){
+    .hamburguer{
+        display: block;
+        z-index: 1;
+    }
+    .nav-item{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(89, 156, 218);
+        clip-path: circle(100px at 90% -80%);
+        transition: 1s ease-out;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 0;
+        align-items: center;
+        pointer-events: none;
+    }
+    .nav-item :hover{
+        text-decoration: underline;
+        color: rgb(68, 68, 68); 
+    }
+    .nav-item a{
+        font-size: 24px;
+        opacity: 0;
+    }
+    .nav-item li :nth-child(1) a{
+        transition: 0.5s 0.2s;
+    }
+    .nav-item li :nth-child(2) a{
+        transition: 0.5s 0.4s;
+    }
+    .nav-item li :nth-child(3) a{
+        transition: 0.5s 0.6s;
+    }
+    .nav.active .nav-item{
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+    .nav.active .nav-item a{
+        opacity: 1;
+    }
+    .nav.active .hamburguer{
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+    .nav.active .hamburguer::before{
+        transform: rotate(135deg);
+    }
+    .nav.active .hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+ 
+    .list{
+        flex-direction: column;
+
+    }
+}
+.rodape{
+    display: flex;
+    background-color: rgb(34, 34, 34);
+    padding-inline: 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+    gap: 20px;
+}
+.list a{
+    color: #fff;
+    text-decoration: none;
+    padding-block: 16px;
+}
+.list :hover{
+    text-decoration: underline;
+    color: rgb(89, 156, 218);    
+}
+
+.contatinho{
+    align-items: center;
+    color: aliceblue;
+}
+.creditos{
+    background-color: rgb(34, 34, 34);
+}
+.creditos p{
+    color: #fff;
+    padding-top: 5px;
+}
